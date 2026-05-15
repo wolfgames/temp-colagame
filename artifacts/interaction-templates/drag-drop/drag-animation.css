@@ -1,0 +1,174 @@
+/* ═══════════════════════════════════════════════════════════════════════
+ * Drag-Drop Interaction Archetype — CSS Animations
+ *
+ * LOCKED — do not modify keyframes, durations, or class names.
+ * Copy this file directly into your game's CSS.
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Board container prerequisites ────────────────────────────────────── */
+/* Apply these to your board/game container element:
+ *   touch-action: none;
+ *   user-select: none;
+ *   position: relative;
+ */
+
+/* ── Drop settle (valid drop lands in place) ─────────────────────────── */
+@keyframes drop-settle {
+  0% {
+    transform: scale(1.04);
+    opacity: 0.9;
+  }
+  60% {
+    transform: scale(0.98);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.drop-settle {
+  animation: drop-settle 200ms ease-out forwards;
+}
+
+/* ── Snap-back (invalid drop returns to origin) ──────────────────────── */
+@keyframes snap-back {
+  0% {
+    transform: translate(var(--snap-dx, 0), var(--snap-dy, 0)) scale(1.04);
+    opacity: 0.85;
+  }
+  60% {
+    transform: translate(0, 0) scale(0.96);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.snap-back {
+  animation: snap-back 200ms cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+/* ── Drop zone highlight (green glow during drag) ────────────────────── */
+.drop-glow {
+  box-shadow: 0 0 12px 4px rgba(76, 255, 120, 0.6) !important;
+  border-color: #4cff78 !important;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+/* ── Ghost piece styling (follows pointer during drag) ───────────────── */
+.drag-ghost {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: scale(1.04);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ── Source piece dimmed during drag ─────────────────────────────────── */
+.drag-source-dim {
+  opacity: 0.3;
+  transition: opacity 0.1s;
+}
+
+/* ── Card flip animation (two-phase: out then in) ────────────────────── */
+@keyframes card-flip-out {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes card-flip-in {
+  0% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.card-flip-out {
+  animation: card-flip-out 150ms ease-in forwards;
+  transform-style: preserve-3d;
+}
+
+.card-flip-in {
+  animation: card-flip-in 150ms ease-out forwards;
+  transform-style: preserve-3d;
+}
+
+/* ── Score float (pops up and fades) ─────────────────────────────────── */
+@keyframes score-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-8px) scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.score-float {
+  animation: score-float 800ms ease-out forwards;
+  pointer-events: none;
+  position: absolute;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fde68a;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+/* ── Win celebration (pop with confetti-like scale) ──────────────────── */
+@keyframes celebration-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.celebration-pop {
+  animation: celebration-pop 600ms ease-out forwards;
+}
+
+/* ── Fade in (overlay backdrop) ──────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 300ms ease-out forwards;
+}
+
+/* ── Drag overlay container (fixed, above everything) ────────────────── */
+.drag-overlay {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+}

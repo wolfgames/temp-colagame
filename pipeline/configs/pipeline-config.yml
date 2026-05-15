@@ -1,0 +1,64 @@
+# Pipeline execution config — controls pipeline-build-game and pipeline-morph-game behavior.
+# Read by the pipeline at runtime. Committed to repo.
+
+# Target pass — the build pipeline runs exactly one named pass per invocation.
+#   core | secondary | meta | superfan
+# Override at the CLI with --pass <name>. The scaffold-only wrappers pass (pre)
+# is NOT accepted here — wrappers are produced once at project init.
+# Archetype — used by pipeline-morph-game to resolve the BCD library.
+#   clearpop : tap-to-clear flood-fill archetype
+archetype: clearpop
+
+pass: core
+
+# Require previous pass — 05-pass-gate refuses to start pass N until pass N-1
+# has a run-log.yml with root status: complete. Set to false to skip the guard
+# (the CLI --allow-skip-pass flag also bypasses per-invocation).
+require-previous-pass: true
+
+# GDD gate — how to handle a thin or missing prompt before running phases.
+#   auto-handoff    : run pipeline-create-gdd in full-generation mode on the draft, then resume (default)
+#   suggest-confirm : pause, show gaps, ask the user whether to build the GDD, proceed anyway, or cancel
+#   proceed-warn    : log a WARNING in run-log.yml and proceed with the thin prompt
+gdd-gate: auto-handoff
+
+# Phase skip groups — disable entire categories of phases
+skip-groups: []
+# skip-groups: [tests, polish, assets]
+
+# Model override — force all phases to use a specific model
+# model: default
+# model: fast
+
+# Skill-vs-GDD precedence on collisions (see references/precedence.md).
+#   false : skills / rules always win on collisions — GDD requirement is dropped
+#           or recast with a one-line rationale in plan.warnings[] (default).
+#   true  : GDD wins on soft collisions; critical rules listed in precedence.md
+#           still win. Every resolution is still surfaced in plan.warnings[].
+allow-gdd-overrides: false
+
+# Browser verification scope in 50-verify (requires browser MCP).
+#   off     : never run, regardless of MCP availability
+#   smoke   : boot + first-interaction crash check only (default — catches
+#             crash-on-Play type bugs without running a full playability walk)
+#   journey : full playability walk (slower, higher token cost; complete 1 level)
+# If MCP is unavailable in smoke/journey mode, verify still completes but logs
+# browser_verified: false and adds a note to remaining_issues. Not a blocking
+# gate — crashes observed in a successful browser run ARE flagged CRITICAL.
+browser-verify: smoke
+
+# Deprecated (v0.3.12 and earlier): visual-verify. Use browser-verify instead.
+#   visual-verify: true   => treated as browser-verify: journey
+#   visual-verify: false  => treated as browser-verify: off
+# Remove once all projects are on v0.3.13+.
+
+# Think-only mode — skip write-mode phases, produce plans only
+think-only: false
+
+# Debug mode — log subagent instructions instead of executing
+debug: false
+
+# Trace mode — write per-phase trace files to runs/<NN>/traces/
+# Traces capture agent reasoning, decisions, and alternatives for human inspection.
+# When false, only structured YAML summaries are written.
+trace: false

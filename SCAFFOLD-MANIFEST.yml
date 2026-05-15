@@ -1,0 +1,5 @@
+steps:
+  - run: bun install
+  - run: npm pkg set scripts.test="vitest run"
+  - run: npm pkg set scripts.release="release-it"
+  - run: npx aidd --cursor --force

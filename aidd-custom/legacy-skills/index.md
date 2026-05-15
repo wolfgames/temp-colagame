@@ -1,0 +1,22 @@
+## Skills Index
+
+- attract-mode - *No description available*
+- build-game - *No description available*
+- code-standards - *No description available*
+- design - *No description available*
+- ftue - *No description available*
+- game-design-system - *No description available*
+- game-lifecycle - *No description available*
+- juice - *No description available*
+- level-generation - *No description available*
+- macro-loop - *No description available*
+- meso-loop - *No description available*
+- micro-loop - *No description available*
+- music-generation - *No description available*
+- new-game-legacy - Legacy game setup via repo fork. Walk through the 12-step checklist to configure a forked scaffold repo for a new game: identity, config, tuning, audio, assets, screens, analytics, feature flags, and cleanup. This is NOT the prompt-to-play pipeline (see build-game for that). Use when: forking the scaffold repo, cloning for a new game, setting up a new project from an existing scaffold, choosing a tech stack for a new repo, or running the legacy /newgame workflow. Triggers on: newgame legacy, fork game, clone game, setup new repo, new game from scaffold, legacy game setup, configure forked repo.
+- new-module - Scaffold a new module in src/modules/. Creates directory structure, derives naming tokens from a kebab-case input, copies and hydrates templates, verifies the build, and updates the module index. Use when the user wants to create a new primitive, logic module, or prefab. Triggers on: new module, create module, add module, scaffold module, newmodule.
+- polish - *No description available*
+- scaffold-profiles - *No description available*
+- sound-design - *No description available*
+- sound-design-elevenlabs - *No description available*
+- visual-design - *No description available*

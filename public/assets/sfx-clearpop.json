@@ -1,0 +1,59 @@
+{
+  "urls": [
+    "sfx-clearpop.mp3"
+  ],
+  "sprite": {
+    "blocker_clear": [
+      0,
+      570
+    ],
+    "blocker_hit": [
+      570,
+      310
+    ],
+    "bomb_blast": [
+      880,
+      830
+    ],
+    "button_click": [
+      1710,
+      130
+    ],
+    "color_blast": [
+      1840,
+      1010
+    ],
+    "combo_blast": [
+      2850,
+      280
+    ],
+    "lose_stinger": [
+      3130,
+      1770
+    ],
+    "marshmallow_burn": [
+      4900,
+      650
+    ],
+    "pop": [
+      5550,
+      210
+    ],
+    "powerup_spawn": [
+      5760,
+      520
+    ],
+    "reject_thud": [
+      6280,
+      340
+    ],
+    "rocket_whoosh": [
+      6620,
+      650
+    ],
+    "win_stinger": [
+      7270,
+      2220
+    ]
+  }
+}

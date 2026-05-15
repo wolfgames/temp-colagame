@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dish Images Review</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a2e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #eee;
+      padding: 32px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #f0c97a;
+      letter-spacing: 0.05em;
+    }
+
+    p.subtitle {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #16213e;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      padding: 20px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: #f0c97a;
+      transform: translateY(-2px);
+    }
+
+    .img-wrapper {
+      width: 128px;
+      height: 128px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* checkerboard to show transparency */
+      background-image:
+        linear-gradient(45deg, #2a2a3e 25%, transparent 25%),
+        linear-gradient(-45deg, #2a2a3e 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #2a2a3e 75%),
+        linear-gradient(-45deg, transparent 75%, #2a2a3e 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+      border-radius: 8px;
+    }
+
+    .img-wrapper img {
+      width: 128px;
+      height: 128px;
+      object-fit: contain;
+    }
+
+    .dish-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      color: #e0e0e0;
+    }
+
+    .dish-file {
+      font-size: 0.72rem;
+      color: #555;
+      text-align: center;
+      font-family: monospace;
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #0f3460;
+      color: #7eb8f7;
+      border: 1px solid #1a5090;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      margin: 32px 0 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍰 Recipe Dish Images</h1>
+  <p class="subtitle">128×128 PNG · Transparent background · Cozy Kitchen theme</p>
+
+  <p class="section-title">All 11 Dishes</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-honey-cake.png" alt="Honey Cake" />
+      </div>
+      <div class="dish-name">Honey Cake</div>
+      <div class="dish-file">dish-honey-cake.png</div>
+      <span class="badge">egg · marshmallow</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-celebration-tart.png" alt="Celebration Tart" />
+      </div>
+      <div class="dish-name">Celebration Tart</div>
+      <div class="dish-file">dish-celebration-tart.png</div>
+      <span class="badge">egg · jelly</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-truce-shortbread.png" alt="Truce Shortbread" />
+      </div>
+      <div class="dish-name">Truce Shortbread</div>
+      <div class="dish-file">dish-truce-shortbread.png</div>
+      <span class="badge">cookie</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-marshmallow-cocoa.png" alt="Toasted Marshmallow Cocoa" />
+      </div>
+      <div class="dish-name">Toasted Marshmallow Cocoa</div>
+      <div class="dish-file">dish-marshmallow-cocoa.png</div>
+      <span class="badge">marshmallow · cookie</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-charm-cake.png" alt="Original Charm Cake" />
+      </div>
+      <div class="dish-name">Original Charm Cake</div>
+      <div class="dish-file">dish-charm-cake.png</div>
+      <span class="badge">all blockers</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-jam-roll.png" alt="Grandmother's Jam Roll" />
+      </div>
+      <div class="dish-name">Grandmother's Jam Roll</div>
+      <div class="dish-file">dish-jam-roll.png</div>
+      <span class="badge">jelly · cage</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-praline-cake.png" alt="Hazelnut Praline Cake" />
+      </div>
+      <div class="dish-name">Hazelnut Praline Cake</div>
+      <div class="dish-file">dish-praline-cake.png</div>
+      <span class="badge">cage</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-pumpkin-loaf.png" alt="Spiced Pumpkin Loaf" />
+      </div>
+      <div class="dish-name">Spiced Pumpkin Loaf</div>
+      <div class="dish-file">dish-pumpkin-loaf.png</div>
+      <span class="badge">marshmallow · cookie</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-wedding-cake.png" alt="Seven-Layer Wedding Cake" />
+      </div>
+      <div class="dish-name">Seven-Layer Wedding Cake</div>
+      <div class="dish-file">dish-wedding-cake.png</div>
+      <span class="badge">cage · cookie · marshmallow</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-rose-macarons.png" alt="Rose Petal Macarons" />
+      </div>
+      <div class="dish-name">Rose Petal Macarons</div>
+      <div class="dish-file">dish-rose-macarons.png</div>
+      <span class="badge">cookie · egg</span>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/dishes/dish-caramel-snaps.png" alt="Salted Caramel Snaps" />
+      </div>
+      <div class="dish-name">Salted Caramel Snaps</div>
+      <div class="dish-file">dish-caramel-snaps.png</div>
+      <span class="badge">cage · cookie</span>
+    </div>
+
+  </div>
+
+  <p class="section-title" style="margin-top:48px;">Style Reference — Existing Blockers</p>
+  <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); max-width: 560px;">
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/blockers/block-obstacle-cookie-128.png" alt="Cookie blocker" />
+      </div>
+      <div class="dish-name">Cookie</div>
+      <div class="dish-file">block-obstacle-cookie-128.png</div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="assets/sprites/cozy-kitchen/blockers/block-obstacle-marshmallow-128.png" alt="Marshmallow blocker" />
+      </div>
+      <div class="dish-name">Marshmallow</div>
+      <div class="dish-file">block-obstacle-marshmallow-128.png</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

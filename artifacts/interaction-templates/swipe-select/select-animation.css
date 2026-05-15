@@ -1,0 +1,131 @@
+/* ═══════════════════════════════════════════════════════════════════════
+ * Swipe-Select Interaction Archetype — CSS Animations
+ *
+ * LOCKED — do not modify keyframes, durations, or class names.
+ * Copy this file directly into your game's CSS.
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+/* ---------- Cell Base ---------- */
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: transform 0.1s ease, border-color 0.1s ease, background 0.1s ease;
+}
+
+/* ---------- Cell Selected (scale 1.1x) ---------- */
+.cell-selected {
+  transform: scale(1.1);
+  border-color: var(--accent, #e94560);
+  background: var(--cell-selected, #e94560);
+  box-shadow: 0 0 12px rgba(233, 69, 96, 0.5);
+}
+
+/* ---------- Valid Word Pulse (300ms, green) ---------- */
+.cell-valid {
+  animation: validPulse 0.3s ease-out;
+  border-color: var(--valid-color, #2ecc71);
+  background: var(--valid-color, #2ecc71);
+}
+
+@keyframes validPulse {
+  0% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px 4px rgba(46, 204, 113, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+/* ---------- Invalid Shake (160ms, red) ---------- */
+.cell-invalid {
+  animation: invalidShake 0.16s ease-out;
+  border-color: var(--invalid-color, #e74c3c);
+  background: var(--invalid-color, #e74c3c);
+}
+
+@keyframes invalidShake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-6px); }
+  40%  { transform: translateX(6px); }
+  60%  { transform: translateX(-4px); }
+  80%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+/* ---------- SVG Path Line ---------- */
+.path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.path-svg path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Cell Letter ---------- */
+.cell-letter {
+  font-size: 1.4rem;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+/* ---------- Cell Path Index ---------- */
+.cell-index {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 0.55rem;
+  opacity: 0.7;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* ---------- Score Float ---------- */
+.score-float {
+  position: absolute;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--valid-color, #2ecc71);
+  pointer-events: none;
+  animation: scoreFloat 0.8s ease-out forwards;
+}
+
+@keyframes scoreFloat {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.2);
+  }
+}
+
+/* ---------- Pop-In (found word chips, etc.) ---------- */
+@keyframes popIn {
+  0%   { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---------- Board Container ---------- */
+.board-container {
+  position: relative;
+  touch-action: none;
+  cursor: pointer;
+}

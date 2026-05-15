@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <title>Bomb outline alt1 — round + spark</title>
+  <g
+    stroke="currentColor"
+    stroke-width="2.25"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    vector-effect="non-scaling-stroke"
+  >
+    <!-- Fuse -->
+    <path d="M32 12 V22" />
+    <!-- Spark -->
+    <path d="M32 8 L34 12 M32 8 L30 12 M32 6 L32 10" />
+    <!-- Body -->
+    <circle cx="32" cy="40" r="16" />
+  </g>
+</svg>

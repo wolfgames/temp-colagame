@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Power-up spawn preview icons</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: system-ui, sans-serif;
+      background: #13131f;
+      color: #e8e8f0;
+      line-height: 1.45;
+    }
+    h1 { font-size: 1.1rem; margin: 0 0 8px; }
+    .hint {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      max-width: 56ch;
+      margin: 0 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+      max-width: 720px;
+    }
+    .card {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.04);
+    }
+    .card h2 { margin: 0 0 10px; font-size: 0.85rem; font-weight: 600; }
+    .gem {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      border-radius: 10px;
+      background: linear-gradient(180deg, oklch(0.72 0.22 25) 0%, oklch(0.55 0.24 25) 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .gem img {
+      width: 72%;
+      height: 72%;
+      object-fit: contain;
+      mix-blend-mode: overlay;
+      opacity: 0.92;
+      filter: brightness(0) invert(1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Power-up spawn preview (SVG assets)</h1>
+  <p class="hint">
+    <strong>In-game:</strong> Rubik’s (color burst) overlay only shows when a valid same-color group has
+    <strong>9+ gems</strong> at default tuning (5 / 7 / 9 thresholds). That is uncommon on normal boards —
+    rocket (5+) and bomb (7–8) are easier to spot.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <h2>Rocket — rocket-outline.svg</h2>
+      <div class="gem"><img src="rocket-outline.svg" alt="" width="64" height="64" /></div>
+    </div>
+    <div class="card">
+      <h2>Bomb — bomb-outline.svg</h2>
+      <div class="gem"><img src="bomb-outline.svg" alt="" width="64" height="64" /></div>
+    </div>
+    <div class="card">
+      <h2>Rubik’s (color burst) — rubiks-outline.svg</h2>
+      <div class="gem"><img src="rubiks-outline.svg" alt="" width="64" height="64" /></div>
+    </div>
+  </div>
+</body>
+</html>

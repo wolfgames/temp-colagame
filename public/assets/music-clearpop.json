@@ -1,0 +1,6 @@
+{
+  "urls": ["music-clearpop.mp3"],
+  "sprite": {
+    "music_game": [0, 22000, true]
+  }
+}

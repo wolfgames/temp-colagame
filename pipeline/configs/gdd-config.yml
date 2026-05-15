@@ -1,0 +1,27 @@
+# GDD pass + section enablement — controls which GDD parts pipeline-create-gdd generates.
+# `passes:` gates whole passes on/off (the coarse knob).
+# `sections:` keys match step frontmatter `id` and gate individual sections within an enabled pass.
+# Missing key = enabled (safe default — nothing silently skipped).
+# final-assembly always runs and adapts to whatever sections were included.
+
+passes:
+  core: true
+  secondary: false
+  meta: false
+  superfan: false
+
+sections:
+  overview: true
+  core-mechanics: true
+  tutorial: false
+  chapter-structure: false
+  level-generation: true
+  game-flow: true
+  feedback-juice: false
+  secondary-mechanics: false
+  companion-character: false
+  narrative-layer: false
+  meta-loop: false
+  asset-list: false
+  content-pipeline: false
+  superfan-systems: false

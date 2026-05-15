@@ -1,0 +1,204 @@
+.settings-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.status-notification {
+  position: absolute;
+  top: calc(100% - 10px);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 100;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.status-default {
+  left: -300px;
+}
+
+.status-volume {
+  left: -200px;
+  transform: translateX(0);
+}
+
+.status-voice {
+  right: 120px;
+  transform: translateX(0);
+}
+
+.status-music {
+  right: 40px;
+  transform: translateX(0);
+}
+
+.settings-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.settings-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  width: 380px;
+  z-index: 90;
+  filter: invert(0) !important;
+}
+
+.controls-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.toggle-button {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(60, 60, 60);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin: 0 4px;
+  filter: invert(0) !important;
+}
+
+.toggle-button:hover {
+  background-color: rgb(50, 50, 50);
+}
+
+.toggle-button.active {
+  background-color: white;
+}
+
+.toggle-button.muted {
+  background-color: rgb(60, 60, 60);
+}
+
+.toggle-icon {
+  fill: black;
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+  filter: invert(0) !important;
+}
+
+.toggle-button img[alt="Music"],
+.toggle-button img[alt="Music Muted"] {
+  width: 24px;
+  height: 24px;
+}
+
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.volume-slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.volume-slider-label {
+  font-size: 14px;
+  color: rgb(160, 160, 160);
+}
+
+.slider-root {
+  position: relative;
+  display: flex;
+  width: 220px;
+  height: 60px;
+  touch-action: none;
+  user-select: none;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.slider-icon-container {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.slider-icon {
+  fill: #000000;
+  opacity: 0.7;
+}
+
+.slider-icon.muted {
+  fill: #000000;
+  opacity: 0.7;
+}
+
+.slider-track {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: rgb(60, 60, 60);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  filter: invert(0) !important;
+}
+
+.slider-track-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  fill: #000000;
+  opacity: 0.9;
+  filter: invert(0) brightness(0) !important;
+  width: 36px;
+  height: 36px;
+}
+
+.slider-range {
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  left: 0;
+  filter: invert(0) !important;
+}
+
+.volume-low-icon {
+  left: 3px !important;
+}
+
+.volume-muted-icon {
+  left: 3px !important;
+  width: 100px !important;
+  height: 36px !important;
+}

@@ -1,0 +1,82 @@
+/* ═══════════════════════════════════════════════════════════════════════
+ * Merge Interaction Archetype — CSS Animations
+ *
+ * LOCKED — do not modify keyframes, durations, or class names.
+ * Copy this file directly into your game's CSS.
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Merge pop: played on the newly created higher-tier piece ──────── */
+@keyframes merge-pop {
+  0%   { transform: scale(0.6); opacity: 0; }
+  50%  { transform: scale(1.25); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.piece.merging {
+  animation: merge-pop 280ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Merge pulse: score feedback ripple on merged piece ────────────── */
+@keyframes merge-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.piece.pulsing {
+  animation: merge-pulse 200ms ease-out;
+}
+
+/* ── Spawn in: new random piece appears on the board ───────────────── */
+@keyframes spawn-in {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.piece.spawning {
+  animation: spawn-in 250ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Snap back: invalid drop, piece returns to origin ──────────────── */
+@keyframes snap-back {
+  0%   { transform: scale(1.05); }
+  50%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.piece.snapping {
+  animation: snap-back 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Ghost piece: follows pointer during drag ──────────────────────── */
+.ghost-piece {
+  position: fixed;
+  width: var(--cell-size, 70px);
+  height: var(--cell-size, 70px);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 100;
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: brightness(1.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Dragging state: real piece fades while ghost is active ────────── */
+.piece.dragging {
+  opacity: 0.3;
+  cursor: grabbing;
+}
+
+/* ── Valid drop target highlight ───────────────────────────────────── */
+.cell.drop-target {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5),
+              0 0 16px rgba(255, 255, 255, 0.2);
+}

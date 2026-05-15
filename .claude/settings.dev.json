@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(bun run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(ls:*)",
+      "Read(src/**)",
+      "Read(docs/**)",
+      "Read(public/**)",
+      "Edit(src/game/**)",
+      "Write(src/game/**)",
+      "Edit(src/modules/**)",
+      "Write(src/modules/**)",
+      "Edit(docs/**)",
+      "Write(docs/**)",
+      "Edit(public/**)",
+      "Write(public/**)"
+    ],
+    "deny": [
+      "Edit(src/core/**)",
+      "Write(src/core/**)",
+      "Edit(ai/**)",
+      "Write(ai/**)"
+    ]
+  }
+}

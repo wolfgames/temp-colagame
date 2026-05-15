@@ -1,0 +1,7 @@
+{
+  "$comment": "Keep in sync with src/game/config.ts (single source of truth). Read by: scaffold/lib/gameKit.ts",
+  "projectId": "mygame",
+  "gameSlug": "mygame",
+  "gameName": "My Game",
+  "environment": "QA"
+}

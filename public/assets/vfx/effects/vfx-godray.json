@@ -1,0 +1,460 @@
+{
+  "version": "2.0",
+  "timestamp": "2026-05-05T16:59:43.527Z",
+  "spawners": [
+    {
+      "id": "spawner_1abdf64e-429d-4318-91f8-9dee2c042045",
+      "name": "godray front",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "visible": true,
+      "config": {
+        "textureName": "godray.png",
+        "alphaStart": 1,
+        "alphaEnd": 1,
+        "sizeMode": "pixels",
+        "sizeStartPixels": 486,
+        "sizeEndPixels": 486,
+        "scaleStart": 1,
+        "scaleEnd": 1,
+        "scaleVariance": 0,
+        "colorStart": {
+          "r": 255,
+          "g": 214,
+          "b": 96
+        },
+        "colorEnd": {
+          "r": 255,
+          "g": 214,
+          "b": 96
+        },
+        "speed": 0,
+        "speedVariance": 0,
+        "angle": 0,
+        "angleVariance": 360,
+        "acceleration": 0,
+        "gravity": 0,
+        "rotationStart": 0,
+        "rotationSpeed": 24,
+        "rotationVariance": 0,
+        "rotationDirection": "clockwise",
+        "emitterStartDelay": 0,
+        "emitterLifetime": 1.5,
+        "emitterLifetimeVariance": 0,
+        "particleLifetime": 10,
+        "particleLifetimeVariance": 0,
+        "loop": false,
+        "emitting": true,
+        "burst": false,
+        "spawnRate": 8,
+        "maxParticles": 1,
+        "particlesPerWave": 12,
+        "blendMode": "normal",
+        "autoPlay": true,
+        "pulse": {
+          "enabled": false,
+          "duration": 1.2,
+          "scaleMin": 1,
+          "scaleMax": 1.08,
+          "alphaMin": 0.75,
+          "alphaMax": 0.9
+        },
+        "alphaOverLifetime": [
+          [
+            0,
+            0
+          ],
+          [
+            0.2,
+            0.9
+          ],
+          [
+            0.8,
+            0.9
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "sizeOverLifetime": null,
+        "shape": {
+          "type": "point",
+          "radiusThickness": 0,
+          "arc": 360,
+          "emitFrom": "volume",
+          "randomizeDirection": 0,
+          "alignToDirection": false
+        },
+        "noise": {
+          "enabled": false,
+          "strength": 1,
+          "frequency": 0.5,
+          "scrollSpeed": 0.5,
+          "octaves": 1,
+          "octaveMultiplier": 0.5,
+          "octaveScale": 2
+        },
+        "prewarm": false,
+        "simulationSpeed": 1,
+        "limitVelocity": {
+          "enabled": false,
+          "speedLimit": 10,
+          "dampen": 0.5,
+          "drag": 0
+        },
+        "forceOverLifetime": {
+          "x": 0,
+          "y": 0
+        },
+        "trails": {
+          "enabled": false,
+          "ratio": 1,
+          "lifetime": 0.5,
+          "minVertexDistance": 10,
+          "widthOverTrail": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "inheritParticleColor": true
+        },
+        "pixiFilters": {
+          "enabled": false,
+          "brightness": 1,
+          "contrast": 1,
+          "saturation": 1,
+          "hue": 0,
+          "grayscale": 0,
+          "negative": false,
+          "sepia": false,
+          "technicolor": false,
+          "polaroid": false,
+          "vintage": false,
+          "kodachrome": false,
+          "browni": false,
+          "lsd": false,
+          "toBGR": false
+        },
+        "velocityOverLifetime": {
+          "orbital": 8,
+          "radial": 0,
+          "linearX": 0,
+          "linearY": 0,
+          "speedModifier": 1
+        }
+      },
+      "randomPosition": false,
+      "randomPositionPadding": {
+        "top": 50,
+        "right": 50,
+        "bottom": 50,
+        "left": 50
+      }
+    },
+    {
+      "id": "spawner_godray_secondary",
+      "name": "godray back",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "visible": true,
+      "config": {
+        "textureName": "godray.png",
+        "alphaStart": 0.35,
+        "alphaEnd": 0.35,
+        "sizeMode": "pixels",
+        "sizeStartPixels": 486,
+        "sizeEndPixels": 486,
+        "scaleStart": 1,
+        "scaleEnd": 1,
+        "scaleVariance": 0,
+        "colorStart": {
+          "r": 255,
+          "g": 214,
+          "b": 96
+        },
+        "colorEnd": {
+          "r": 255,
+          "g": 214,
+          "b": 96
+        },
+        "speed": 0,
+        "speedVariance": 0,
+        "angle": 0,
+        "angleVariance": 360,
+        "acceleration": 0,
+        "gravity": 0,
+        "rotationStart": 0,
+        "rotationSpeed": 24,
+        "rotationVariance": 0,
+        "rotationDirection": "counter-clockwise",
+        "emitterStartDelay": 0,
+        "emitterLifetime": 1.5,
+        "emitterLifetimeVariance": 0,
+        "particleLifetime": 10,
+        "particleLifetimeVariance": 0,
+        "loop": false,
+        "emitting": true,
+        "burst": false,
+        "spawnRate": 8,
+        "maxParticles": 1,
+        "particlesPerWave": 12,
+        "blendMode": "normal",
+        "autoPlay": true,
+        "pulse": {
+          "enabled": false,
+          "duration": 1.2,
+          "scaleMin": 1,
+          "scaleMax": 1.08,
+          "alphaMin": 0.75,
+          "alphaMax": 0.9
+        },
+        "alphaOverLifetime": [
+          [
+            0,
+            0
+          ],
+          [
+            0.2,
+            0.9
+          ],
+          [
+            0.8,
+            0.9
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "sizeOverLifetime": null,
+        "shape": {
+          "type": "point",
+          "radiusThickness": 0,
+          "arc": 360,
+          "emitFrom": "volume",
+          "randomizeDirection": 0,
+          "alignToDirection": false
+        },
+        "noise": {
+          "enabled": false,
+          "strength": 1,
+          "frequency": 0.5,
+          "scrollSpeed": 0.5,
+          "octaves": 1,
+          "octaveMultiplier": 0.5,
+          "octaveScale": 2
+        },
+        "prewarm": false,
+        "simulationSpeed": 1,
+        "limitVelocity": {
+          "enabled": false,
+          "speedLimit": 10,
+          "dampen": 0.5,
+          "drag": 0
+        },
+        "forceOverLifetime": {
+          "x": 0,
+          "y": 0
+        },
+        "trails": {
+          "enabled": false,
+          "ratio": 1,
+          "lifetime": 0.5,
+          "minVertexDistance": 10,
+          "widthOverTrail": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "inheritParticleColor": true
+        },
+        "pixiFilters": {
+          "enabled": false,
+          "brightness": 1,
+          "contrast": 1,
+          "saturation": 1,
+          "hue": 0,
+          "grayscale": 0,
+          "negative": false,
+          "sepia": false,
+          "technicolor": false,
+          "polaroid": false,
+          "vintage": false,
+          "kodachrome": false,
+          "browni": false,
+          "lsd": false,
+          "toBGR": false
+        },
+        "velocityOverLifetime": {
+          "orbital": 8,
+          "radial": 0,
+          "linearX": 0,
+          "linearY": 0,
+          "speedModifier": 1
+        }
+      },
+      "randomPosition": false,
+      "randomPositionPadding": {
+        "top": 50,
+        "right": 50,
+        "bottom": 50,
+        "left": 50
+      }
+    },
+    {
+      "id": "spawner_hot_core",
+      "name": "Hot Core",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "visible": true,
+      "config": {
+        "textureName": "star.png",
+        "alphaStart": 1,
+        "alphaEnd": 1,
+        "sizeMode": "pixels",
+        "sizeStartPixels": 550,
+        "sizeEndPixels": 550,
+        "scaleStart": 1,
+        "scaleEnd": 1,
+        "scaleVariance": 0,
+        "colorStart": {
+          "r": 255,
+          "g": 255,
+          "b": 245
+        },
+        "colorEnd": {
+          "r": 255,
+          "g": 255,
+          "b": 245
+        },
+        "speed": 0,
+        "speedVariance": 0,
+        "angle": 0,
+        "angleVariance": 360,
+        "acceleration": 0,
+        "gravity": 0,
+        "rotationStart": 0,
+        "rotationSpeed": 18,
+        "rotationVariance": 0,
+        "rotationDirection": "clockwise",
+        "emitterStartDelay": 0,
+        "emitterLifetime": 1.5,
+        "emitterLifetimeVariance": 0,
+        "particleLifetime": 10,
+        "particleLifetimeVariance": 0,
+        "loop": false,
+        "emitting": true,
+        "burst": false,
+        "spawnRate": 8,
+        "maxParticles": 1,
+        "particlesPerWave": 12,
+        "blendMode": "add",
+        "autoPlay": true,
+        "pulse": {
+          "enabled": true,
+          "duration": 0.9,
+          "scaleMin": 1.23,
+          "scaleMax": 1.35,
+          "alphaMin": 0.92,
+          "alphaMax": 1
+        },
+        "alphaOverLifetime": null,
+        "shape": {
+          "type": "point",
+          "radiusThickness": 0,
+          "arc": 360,
+          "emitFrom": "volume",
+          "randomizeDirection": 0,
+          "alignToDirection": false
+        },
+        "noise": {
+          "enabled": false,
+          "strength": 1,
+          "frequency": 0.5,
+          "scrollSpeed": 0.5,
+          "octaves": 1,
+          "octaveMultiplier": 0.5,
+          "octaveScale": 2
+        },
+        "prewarm": false,
+        "simulationSpeed": 1,
+        "limitVelocity": {
+          "enabled": false,
+          "speedLimit": 10,
+          "dampen": 0.5,
+          "drag": 0
+        },
+        "forceOverLifetime": {
+          "x": 0,
+          "y": 0
+        },
+        "trails": {
+          "enabled": false,
+          "ratio": 1,
+          "lifetime": 0.5,
+          "minVertexDistance": 10,
+          "widthOverTrail": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "inheritParticleColor": true
+        },
+        "pixiFilters": {
+          "enabled": false,
+          "brightness": 1,
+          "contrast": 1,
+          "saturation": 1,
+          "hue": 0,
+          "grayscale": 0,
+          "negative": false,
+          "sepia": false,
+          "technicolor": false,
+          "polaroid": false,
+          "vintage": false,
+          "kodachrome": false,
+          "browni": false,
+          "lsd": false,
+          "toBGR": false
+        },
+        "velocityOverLifetime": {
+          "orbital": 0,
+          "radial": 0,
+          "linearX": 0,
+          "linearY": 0,
+          "speedModifier": 1
+        }
+      },
+      "randomPosition": false,
+      "randomPositionPadding": {
+        "top": 50,
+        "right": 50,
+        "bottom": 50,
+        "left": 50
+      }
+    }
+  ],
+  "aspectRatio": "16:9"
+}

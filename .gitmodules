@@ -1,0 +1,3 @@
+[submodule "tools/game-builder"]
+	path = tools/game-builder
+	url = git@github.com:wolfgames/game-builder.git

@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Tap-Clear Animation — CSS Keyframes
+ *
+ * Production-tested. Copy this file directly into your game.
+ * DO NOT rewrite these animations from scratch.
+ *
+ * For canvas/PixiJS renderers: use the timing values and easing
+ * curves documented here as GSAP equivalents.
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Fast Pop: regular group clear ──
+ * GSAP equivalent: scale 0→0, alpha 0→0, 200ms, back.in(2) / power2.in
+ */
+@keyframes pop-fast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.pop-fast {
+  animation: pop-fast 200ms cubic-bezier(0.6, -0.28, 0.74, 0.05) forwards;
+  /* back.in(2) approximation */
+}
+
+/* ── Punch Pop: rocket line clear ──
+ * Wind-up punch (55ms) then fast pop (200ms)
+ * GSAP: scale→1.08 55ms power2.out, then scale→0 200ms back.in(2)
+ */
+@keyframes pop-punch {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  21% {
+    /* 55ms / 255ms ≈ 21% */
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.pop-punch {
+  animation: pop-punch 255ms ease-out forwards;
+}
+
+/* ── Burst Pop: color burst clear ──
+ * Swell (140ms) → hold (100ms) → implode (180ms)
+ * GSAP: scale→1.18 140ms, scale→1.26 100ms, scale→0 + alpha→0 180ms
+ */
+@keyframes pop-burst {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  33% {
+    /* 140ms / 420ms ≈ 33% */
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  57% {
+    /* 240ms / 420ms ≈ 57% */
+    transform: scale(1.26);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.pop-burst {
+  animation: pop-burst 420ms ease-in-out forwards;
+}
+
+/* ── Gravity Drop ──
+ * GSAP: y→target, 280ms, back.out(1.4)
+ * Uses CSS custom property --drop-y for distance
+ */
+@keyframes block-drop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(var(--drop-y));
+  }
+}
+
+.block-drop {
+  animation: block-drop 280ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  /* back.out(1.4) approximation */
+}
+
+/* ── Spawn Drop (new blocks from above) ──
+ * Same timing as gravity, but starts transparent
+ * GSAP: y→target, alpha 0→1, 280ms, back.out(1.4)
+ */
+@keyframes block-spawn {
+  0% {
+    transform: translateY(var(--spawn-from));
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.block-spawn {
+  animation: block-spawn 280ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* ── Highlight Pulse (valid groups) ──
+ * GSAP: scale 1→1.05, 800ms, sine.inOut, yoyo, repeat infinite
+ */
+@keyframes highlight-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.highlight-pulse {
+  animation: highlight-pulse 800ms ease-in-out infinite;
+}
+
+/* ── Reject Shake (invalid tap) ──
+ * GSAP: x -4, +4, -2, 0 at 40ms intervals = 160ms total
+ */
+@keyframes reject-shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.reject-shake {
+  animation: reject-shake 160ms linear;
+}
+
+/* ── Power-Up Spawn ──
+ * GSAP: scale 0→1, 250ms, back.out(2); alpha 0→1, 150ms, power2.out
+ */
+@keyframes powerup-spawn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    /* 150ms / 250ms = 60% — fully opaque */
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.powerup-spawn {
+  animation: powerup-spawn 250ms cubic-bezier(0.175, 0.885, 0.32, 1.575) forwards;
+  /* back.out(2) approximation */
+}
+
+/* ── Score Float ── */
+@keyframes score-float {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.2);
+  }
+}
+
+.score-float {
+  position: absolute;
+  pointer-events: none;
+  z-index: 20;
+  animation: score-float 600ms ease-out forwards;
+}

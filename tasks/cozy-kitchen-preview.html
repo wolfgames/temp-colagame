@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cozy Kitchen — Asset Previews</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #1a2233;
+    color: #e6edf7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    gap: 28px;
+  }
+  h1 { margin: 0; font-weight: 600; font-size: 20px; }
+  h2 { margin: 8px 0 0; font-weight: 600; font-size: 15px; color: #aeb9cf; }
+  .sub { margin: -16px 0 0; color: #8aa0c2; font-size: 13px; max-width: 720px; text-align: center; }
+
+  .row {
+    display: flex;
+    gap: 28px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .tile {
+    width: 192px;
+    height: 192px;
+    background: #2a3450;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  .tile img {
+    width: 100%;
+    height: 100%;
+    image-rendering: -webkit-optimize-contrast;
+    object-fit: contain;
+  }
+  .label { font-size: 13px; color: #cfdcef; }
+  .note  { font-size: 11px; color: #f5b1b1; }
+  hr.sep {
+    width: 80%;
+    border: 0;
+    border-top: 1px solid #3c4a6e;
+    margin: 16px 0 0;
+  }
+  .reference {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    background: #2a3450;
+    padding: 16px 24px;
+    border-radius: 12px;
+  }
+  .reference .ref-tile {
+    width: 96px; height: 96px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .reference .ref-tile img { width: 100%; height: 100%; object-fit: contain; }
+  .reference .ref-caption { font-size: 12px; color: #8aa0c2; max-width: 400px; }
+</style>
+</head>
+<body>
+
+  <h1>Cozy Kitchen — Asset Previews</h1>
+  <p class="sub">
+    Sprites for the cozy-kitchen theme. All should match the style of the egg / egg-nest reference below
+    and fill the full 128×128 square. Magenta edges = chroma-key bleed; will clean up once a variant is picked.
+  </p>
+
+  <div class="reference">
+    <div class="ref-tile"><img src="../public/assets/sprites/generic/block-obstacle-egg-128.png" alt="egg ref"></div>
+    <div class="ref-tile"><img src="../public/assets/sprites/generic/block-obstacle-egg-nest-128.png" alt="nest ref"></div>
+    <div class="ref-caption">
+      <strong>Style reference</strong><br>
+      Flat cartoon illustration, warm earth tones, soft outline, one highlight, one shadow.
+      Nest-style sprites should fill the whole cell edge-to-edge, not sit as a small centered subject.
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <h1>Soap Sud <span style="color:#8aa0c2;font-weight:400;">— replaces <code>bubble_block</code></span></h1>
+  <p class="sub">Fluffy dishwashing foam piled on a kitchen ingredient, with a few iridescent bubbles on top.</p>
+
+  <div class="row">
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-soap-sud-1.png" alt="sud 1"></div>
+      <div class="label">Sud 1 — foam + spoon, square silhouette</div>
+      <div class="note">magenta bleed (normal)</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-soap-sud-2.png" alt="sud 2"></div>
+      <div class="label">Sud 2 — tall mound, spoon low</div>
+      <div class="note">magenta bleed</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-soap-sud-3.png" alt="sud 3"></div>
+      <div class="label">Sud 3 — cloud-like, fills cell best</div>
+      <div class="note">magenta bleed</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-soap-sud-4.png" alt="sud 4"></div>
+      <div class="label">Sud 4 — rounded mound, spoon mid-height</div>
+      <div class="note">magenta bleed</div>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <h1>Popcorn Pot v2 <span style="color:#8aa0c2;font-weight:400;">— replaces <code>bomb</code>, full nest-style fill</span></h1>
+  <p class="sub">Popcorn overflows on all sides of the pot so the kernels touch every edge of the tile.</p>
+
+  <div class="row">
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v2-1.png" alt="pot v2 1"></div>
+      <div class="label">Pot 1 — popcorn wraps around sides</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v2-2.png" alt="pot v2 2"></div>
+      <div class="label">Pot 2 — overflow down both sides</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v2-3.png" alt="pot v2 3"></div>
+      <div class="label">Pot 3 — full border of popcorn</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v2-4.png" alt="pot v2 4"></div>
+      <div class="label">Pot 4 — cascading kernels at bottom</div>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <h1>Popcorn Pot v3 <span style="color:#8aa0c2;font-weight:400;">— square pot shape</span></h1>
+  <p class="sub">Square/boxy copper pot with popcorn overflow. Pot shape is square to match the tile grid.</p>
+
+  <div class="row">
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v3-1.png" alt="pot v3 1"></div>
+      <div class="label">Pot v3-1 — open square pot, popcorn overflow</div>
+      <div class="note">magenta bg</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v3-2.png" alt="pot v3 2"></div>
+      <div class="label">Pot v3-2 — close-up angle, hammered copper</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v3-3.png" alt="pot v3 3"></div>
+      <div class="label">Pot v3-3 — square pot, popcorn frames all edges</div>
+      <div class="note">magenta bg</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-popcorn-pot-v3-4.png" alt="pot v3 4"></div>
+      <div class="label">Pot v3-4 — compact square pot, right cascade</div>
+      <div class="note">magenta bg</div>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <h1>Candy Jar <span style="color:#8aa0c2;font-weight:400;">— replaces <code>color_blast</code> power-up</span></h1>
+  <p class="sub">Square glass jar filled with colorful gumball candies — the jar IS the tile.</p>
+
+  <div class="row">
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-1.png" alt="jar 1"></div>
+      <div class="label">Jar 1 — clean rectangular glass, silver lid</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-2.png" alt="jar 2"></div>
+      <div class="label">Jar 2 — bright candy, lid inset</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-3.png" alt="jar 3"></div>
+      <div class="label">Jar 3 — purple-rimmed, diagonal shine</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-4.png" alt="jar 4"></div>
+      <div class="label">Jar 4 — broader jar, packed candy</div>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <h1>Candy Jar v2 <span style="color:#8aa0c2;font-weight:400;">— warm earth tones</span></h1>
+  <p class="sub">Regen with warm butterscotch/toffee/amber palette to match egg-nest style. No bright primaries.</p>
+
+  <div class="row">
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-v2-1.png" alt="jar v2 1"></div>
+      <div class="label">Jar v2-1 — square glass jar, wooden lid, on cream board</div>
+      <div class="note">magenta bg</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-v2-2.png" alt="jar v2 2"></div>
+      <div class="label">Jar v2-2 — rounder jar, wooden lid, amber sweets</div>
+      <div class="note">magenta bg</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-v2-3.png" alt="jar v2 3"></div>
+      <div class="label">Jar v2-3 — very square container, dark interior</div>
+      <div class="note">magenta bg</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-candy-jar-v2-4.png" alt="jar v2 4"></div>
+      <div class="label">Jar v2-4 — round jar, woven basket bg, warm candies</div>
+      <div class="note">magenta bg</div>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <h1>Rolling Pin <span style="color:#8aa0c2;font-weight:400;">— replaces <code>rocket</code>, split sprites</span></h1>
+  <p class="sub">Pin alone + floury cutting-board background, composited at render time. Pick one of each.</p>
+
+  <h2>Pin (foreground)</h2>
+  <div class="row">
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-rolling-pin-only-1.png" alt="pin only 1"></div>
+      <div class="label">Pin 1 — narrow, straight silhouette</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-rolling-pin-only-2.png" alt="pin only 2"></div>
+      <div class="label">Pin 2 — chunky handles</div>
+      <div class="note">magenta bg</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-rolling-pin-only-3.png" alt="pin only 3"></div>
+      <div class="label">Pin 3 — tapered, rich grain</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-rolling-pin-only-4.png" alt="pin only 4"></div>
+      <div class="label">Pin 4 — smooth, light grain</div>
+    </div>
+  </div>
+
+  <h2>Flour board (background)</h2>
+  <div class="row">
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-flour-bg-1.png" alt="flour 1"></div>
+      <div class="label">Flour 1 — flour pile centered</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-flour-bg-2.png" alt="flour 2"></div>
+      <div class="label">Flour 2 — corners dusted, wood grain visible</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-flour-bg-3.png" alt="flour 3"></div>
+      <div class="label">Flour 3 — full coverage, streaky</div>
+    </div>
+    <div class="card">
+      <div class="tile"><img src="preview-assets/kitchen-flour-bg-4.png" alt="flour 4"></div>
+      <div class="label">Flour 4 — heavy center mound, clean edges</div>
+    </div>
+  </div>
+
+</body>
+</html>
